@@ -186,15 +186,15 @@ const slides: Slide[] = [
     type: 'grid',
     title: 'Advantages: Communication',
     content: [
-      { icon: Globe, title: 'Global Contact', text: 'Helps us to communicate easily with others worldwide.' },
-      { icon: Zap, title: 'Better Living', text: 'Aims for a higher standard of living through connectivity.' },
-      { icon: Database, title: 'Gather Info', text: 'Vast resources to quickly gather necessary information.' },
-      { icon: Cloud, title: 'Gov Services', text: 'Create programs for private and non-private Government sectors.' },
-      { icon: Smartphone, title: 'Entertainment', text: 'Immediate download of files, music, games, and movies.' },
-      { icon: Target, title: 'Education', text: 'Significant improvements in teaching and learning processes.' },
-      { icon: Globe, title: 'E-Shopping', text: 'Conveniently buy items through the web (online shopping).' },
-      { icon: History, title: 'Updates', text: 'Stay updated through social happenings in real-time.' },
-      { icon: Users, title: 'Expression', text: 'State opinions through blogs, twitter, and social platforms.' }
+      { icon: Globe, title: 'Global Contact', text: 'Helps us to communicate easily with others worldwide.', back: 'Connect instantly via email, social media, and video calls without borders.' },
+      { icon: Zap, title: 'Better Living', text: 'Aims for a higher standard of living through connectivity.', back: 'Enhances lifestyle by providing convenient access to services and information.' },
+      { icon: Database, title: 'Gather Info', text: 'Vast resources to quickly gather necessary information.', back: 'Search engines and databases provide instant answers to almost any query.' },
+      { icon: Cloud, title: 'Gov Services', text: 'Create programs for private and non-private Government sectors.', back: 'E-government platforms simplify taxes, applications, and public communications.' },
+      { icon: Smartphone, title: 'Entertainment', text: 'Immediate download of files, music, games, and movies.', back: 'Streaming and digital downloads offer endless leisure options at your fingertips.' },
+      { icon: Target, title: 'Education', text: 'Significant improvements in teaching and learning processes.', back: 'E-learning tools and online courses make education accessible to everyone.' },
+      { icon: Globe, title: 'E-Shopping', text: 'Conveniently buy items through the web (online shopping).', back: 'Shop from home with global access to products and doorway delivery.' },
+      { icon: History, title: 'Updates', text: 'Stay updated through social happenings in real-time.', back: 'Breaking news and social trends reach you the moment they happen.' },
+      { icon: Users, title: 'Expression', text: 'State opinions through blogs, twitter, and social platforms.', back: 'Digital platforms give everyone a voice to share ideas and perspectives.' }
     ]
   },
   {
@@ -202,16 +202,16 @@ const slides: Slide[] = [
     type: 'grid',
     title: 'Disadvantages: Communication',
     content: [
-      { icon: Clock, title: 'Addiction', text: 'Users becoming compulsively addicted to computers.' },
-      { icon: ShieldAlert, title: 'Wasted Money', text: 'Wasting of money to buy unnecessary things.' },
-      { icon: AlertTriangle, title: 'Wasted Time', text: 'Wasting of time to search or watch non-sense things.' },
-      { icon: Eye, title: 'Poor Eyesight', text: 'Exhaustive screen time leading to poor eyesight.' },
-      { icon: Trash2, title: 'Plagiarism', text: 'Easier copying and spreading of intellectual work.' },
-      { icon: Users, title: 'Neglect', text: 'Avoiding the daily house chores and responsibilities.' },
-      { icon: Shield, title: 'Privacy', text: 'Issues regarding privacy as a major problem.' },
-      { icon: ShieldAlert, title: 'Cybercrime', text: 'Significant increase in hacking and online scams.' },
-      { icon: AlertTriangle, title: 'Reputation', text: 'Destruction of one’s reputation and relationships.' },
-      { icon: Shield, title: 'Viruses', text: 'Rapid spreading of malicious software and viruses.' }
+      { icon: Clock, title: 'Addiction', text: 'Users becoming compulsively addicted to computers.', back: 'Excessive use can lead to social isolation and neglected responsibilities.' },
+      { icon: ShieldAlert, title: 'Wasted Money', text: 'Wasting of money to buy unnecessary things.', back: 'Impulsive online shopping and micro-transactions can drain finances.' },
+      { icon: AlertTriangle, title: 'Wasted Time', text: 'Wasting of time to search or watch non-sense things.', back: 'Endless scrolling and low-value content often distract from productive goals.' },
+      { icon: Eye, title: 'Poor Eyesight', text: 'Exhaustive screen time leading to poor eyesight.', back: 'Prolonged exposure to blue light causes digital eye strain and fatigue.' },
+      { icon: Trash2, title: 'Plagiarism', text: 'Easier copying and spreading of intellectual work.', back: 'Copy-pasting makes it easier to steal content without giving credit.' },
+      { icon: Users, title: 'Neglect', text: 'Avoiding the daily house chores and responsibilities.', back: 'Digital distractions often lead to ignoring real-world tasks and family.' },
+      { icon: Shield, title: 'Privacy', text: 'Issues regarding privacy as a major problem.', back: 'Data tracking and surveillance compromise personal safety and boundaries.' },
+      { icon: ShieldAlert, title: 'Cybercrime', text: 'Significant increase in hacking and online scams.', back: 'Fraudsters use sophisticated tech to steal money and sensitive data.' },
+      { icon: AlertTriangle, title: 'Reputation', text: 'Destruction of one’s reputation and relationships.', back: 'Misunderstandings and cyberbullying can cause lasting social harm.' },
+      { icon: Shield, title: 'Viruses', text: 'Rapid spreading of malicious software and viruses.', back: 'Malware can destroy data, hardware, and compromise entire networks.' }
     ]
   },
   {
@@ -222,42 +222,50 @@ const slides: Slide[] = [
       { 
         title: 'Globalization', 
         icon: Globe, 
-        text: 'Fostering Economic and Social exchange on a worldwide scale.' 
+        text: 'Fostering Economic and Social exchange on a worldwide scale.',
+        back: 'Businesses can operate 24/7 across time zones and reach global markets.'
       },
       { 
         title: 'Competitive Edge', 
         icon: Zap, 
-        text: 'Using Enterprise Resource Planning (ERP) for competitive advantages.' 
+        text: 'Using Enterprise Resource Planning (ERP) for competitive advantages.',
+        back: 'Optimized operations and data-driven strategies outperform competitors.'
       },
       { 
         title: 'Management Shift', 
         icon: Layers, 
-        text: 'Using technology to change the nature of the management process.' 
+        text: 'Using technology to change the nature of the management process.',
+        back: 'Real-time monitoring and remote leadership redefine organizational roles.'
       },
       { 
         title: 'Information Systems', 
         icon: Database, 
-        text: 'Using Information Systems (IS) as a core competitive advantage.' 
+        text: 'Using Information Systems (IS) as a core competitive advantage.',
+        back: 'Better data organization leads to smarter business intelligence and growth.'
       },
       { 
         title: 'Decision Making', 
         icon: Target, 
-        text: 'Providing Management Information Systems (MIS) for critical reports.' 
+        text: 'Providing Management Information Systems (MIS) for critical reports.',
+        back: 'Accurate reports enable managers to make risky decisions with confidence.'
       },
       { 
         title: 'Knowledge IS', 
         icon: Smartphone, 
-        text: 'Supporting Knowledge Info Systems (KIS) to create and store knowledge.' 
+        text: 'Supporting Knowledge Info Systems (KIS) to create and store knowledge.',
+        back: 'Capturing employee expertise ensures organizational learning persists.'
       },
       { 
         title: 'Corporate Storage', 
         icon: Database, 
-        text: 'Securely storing corporate data in Excel, Cloud, and Accounting tools.' 
+        text: 'Securely storing corporate data in Excel, Cloud, and Accounting tools.',
+        back: 'Cloud storage ensures data security and easy retrieval for audits.'
       },
       { 
         title: 'Operational Ease', 
         icon: Globe, 
-        text: 'Increased operational flexibility for both local and global growth.' 
+        text: 'Increased operational flexibility for both local and global growth.',
+        back: 'Scalable cloud infrastructure lets businesses grow without heavy hardware costs.'
       }
     ]
   },
@@ -266,16 +274,16 @@ const slides: Slide[] = [
     type: 'grid',
     title: 'IT Disadvantages in Business',
     content: [
-      { icon: ShieldAlert, title: 'Expense', text: 'High costs for Implementation, Maintenance, and Training.' },
-      { icon: Eye, title: 'Privacy Issues', text: 'Organizations struggling with issues regarding stored privacy.' },
-      { icon: Shield, title: 'Security Risks', text: 'Increased risk of security breaches and unauthorized access.' },
-      { icon: Users, title: 'Identity Theft', text: 'Vulnerability to Identity Theft (Phishing and Pharming).' },
-      { icon: Clock, title: 'Dependence', text: 'Over-reliance on technology leading to lack of basic skills.' },
-      { icon: Users, title: 'Unemployment', text: 'Rapid increase due to computers performing work faster.' },
-      { icon: ShieldAlert, title: 'Spyware', text: 'Programs monitoring activities and stealing corporate data.' },
-      { icon: Globe, title: 'Weaponry', text: 'Technology being used in world destruction weapons and war.' },
-      { icon: AlertTriangle, title: 'Distraction', text: 'Humans are easily distracted by social media and games.' },
-      { icon: Eye, title: 'Health Concerns', text: 'Vision problems, obesity, insomnia, and loss of sleep.' }
+      { icon: ShieldAlert, title: 'Expense', text: 'High costs for Implementation, Maintenance, and Training.', back: 'Upgrading systems requires massive capital and constant staff training.' },
+      { icon: Eye, title: 'Privacy Issues', text: 'Organizations struggling with issues regarding stored privacy.', back: 'Storing customer data brings heavy legal and ethical responsibilities.' },
+      { icon: Shield, title: 'Security Risks', text: 'Increased risk of security breaches and unauthorized access.', back: 'Hacking attempts can paralyze companies and leak intellectual property.' },
+      { icon: Users, title: 'Identity Theft', text: 'Vulnerability to Identity Theft (Phishing and Pharming).', back: 'Stolen credentials can lead to financial loss and loss of corporate trust.' },
+      { icon: Clock, title: 'Dependence', text: 'Over-reliance on technology leading to lack of basic skills.', back: 'System downtime can halt all business activities instantly.' },
+      { icon: Users, title: 'Unemployment', text: 'Rapid increase due to computers performing work faster.', back: 'Automation replaces manual jobs, requiring difficult workforce shifts.' },
+      { icon: ShieldAlert, title: 'Spyware', text: 'Programs monitoring activities and stealing corporate data.', back: 'Unseen software can quietly exfiltrate sensitive strategic plans.' },
+      { icon: Globe, title: 'Weaponry', text: 'Technology being used in world destruction weapons and war.', back: 'Dual-use tech can be repurposed for harmful military applications.' },
+      { icon: AlertTriangle, title: 'Distraction', text: 'Humans are easily distracted by social media and games.', back: 'The availability of non-work content often reduces employee output.' },
+      { icon: Eye, title: 'Health Concerns', text: 'Vision problems, obesity, insomnia, and loss of sleep.', back: 'Sedentary work and screen blue light affect physical and mental health.' }
     ]
   },
   {
@@ -570,11 +578,68 @@ const SlideChart = ({ slide }: { slide: Slide }) => (
   </div>
 );
 
+const FlipCard = ({ item, delay }: { item: any; delay: number }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div 
+      className="relative w-full h-64 perspective"
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <motion.div
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: 'spring', stiffness: 260, damping: 20 }}
+        className="w-full h-full relative preserve-3d cursor-pointer"
+      >
+        {/* Front Side */}
+        <div className="absolute inset-0 backface-hidden bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col justify-between group overflow-hidden">
+          <div className="absolute top-0 right-0 w-20 md:w-24 h-20 md:h-24 bg-indigo-50 rounded-bl-[3rem] md:rounded-bl-[4rem] transition-all group-hover:bg-indigo-600" />
+          <div className="p-3 md:p-4 bg-white shadow-lg shadow-indigo-100 rounded-xl md:rounded-2xl w-fit mb-4 relative z-10">
+            <item.icon className="w-6 md:w-8 h-6 md:h-8 text-indigo-600" />
+          </div>
+          <div className="relative z-10">
+            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2 tracking-tight font-display uppercase">
+              {item.title}
+            </h3>
+            <p className="text-sm text-slate-500 font-medium">
+              {item.text}
+            </p>
+          </div>
+          <div className="pt-4 border-t border-slate-50 flex items-center justify-between text-[10px] font-black text-indigo-400 uppercase tracking-widest">
+            <span>Click to learn more</span>
+            <ArrowRight className="w-4 h-4" />
+          </div>
+        </div>
+
+        {/* Back Side */}
+        <div 
+          className="absolute inset-0 backface-hidden bg-indigo-600 p-8 md:p-10 rounded-[2.5rem] shadow-2xl flex flex-col justify-center text-white"
+          style={{ transform: 'rotateY(180deg)' }}
+        >
+          <div className="mb-6 flex items-center gap-3">
+            <div className="p-2 bg-white/20 rounded-lg">
+              <item.icon className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-black tracking-tight uppercase font-display italic">Explanation</h3>
+          </div>
+          <p className="text-base md:text-xl font-bold leading-relaxed italic text-indigo-50">
+            "{item.back || item.text}"
+          </p>
+          <div className="mt-8 pt-6 border-t border-white/20 text-[10px] font-black uppercase tracking-widest opacity-60">
+            Click to flip back
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const SlideGrid = ({ slide }: { slide: Slide }) => (
   <div className="h-full bg-slate-50 p-6 md:p-16 overflow-y-auto pb-32 md:pb-16">
     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 border-b border-slate-200 pb-8 md:pb-10 gap-4">
       <div>
-        <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] block mb-2">Detailed Analysis</span>
+        <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] block mb-2">Interactive Analysis</span>
         <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight font-display">{slide.title}</h2>
       </div>
       <div className="flex items-center gap-3 md:flex-col md:items-end md:gap-0">
@@ -583,27 +648,15 @@ const SlideGrid = ({ slide }: { slide: Slide }) => (
       </div>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
       {slide.content.map((item: any, idx: number) => (
         <motion.div 
           key={idx}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.05 }}
-          className="bg-white p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-indigo-100/40 transition-all group relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-20 md:w-24 h-20 md:h-24 bg-indigo-50 rounded-bl-[3rem] md:rounded-bl-[4rem] transition-all group-hover:bg-indigo-600" />
-          
-          <div className="p-3 md:p-4 bg-white shadow-lg shadow-indigo-100 rounded-xl md:rounded-2xl w-fit mb-6 md:mb-8 relative z-10 group-hover:scale-110 transition-transform">
-            <item.icon className="w-6 md:w-8 h-6 md:h-8 text-indigo-600" />
-          </div>
-          
-          <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 md:mb-4 tracking-tight relative z-10 font-display uppercase group-hover:text-indigo-600 transition-colors">
-            {item.title}
-          </h3>
-          <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed relative z-10 group-hover:text-slate-600">
-            {item.text}
-          </p>
+          <FlipCard item={item} delay={idx * 0.1} />
         </motion.div>
       ))}
     </div>
@@ -617,23 +670,15 @@ const SlideFeatures = ({ slide }: { slide: Slide }) => (
       <div className="w-20 h-2 bg-indigo-600 rounded-full" />
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
       {slide.content.map((item: any, idx: number) => (
         <motion.div 
           key={idx}
-          initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-white p-6 md:p-10 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-start gap-6 md:gap-8 shadow-sm hover:translate-y-[-4px] transition-transform"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: idx * 0.1 }}
         >
-          <div className="p-4 md:p-6 bg-indigo-600 text-white rounded-2xl md:rounded-3xl shadow-lg shadow-indigo-200">
-            <item.icon className="w-6 h-6 md:w-10 md:h-10" />
-          </div>
-          <div className="space-y-2 md:space-y-4 pt-2">
-            <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight font-display italic">{item.title}</h3>
-            <p className="text-slate-500 font-bold leading-relaxed text-base md:text-lg italic opacity-80">
-              {item.text}
-            </p>
-          </div>
+          <FlipCard item={item} delay={idx * 0.1} />
         </motion.div>
       ))}
     </div>
