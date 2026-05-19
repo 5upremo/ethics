@@ -41,7 +41,9 @@ import {
   Cloud,
   Layers,
   ArrowRight,
-  Presentation
+  Presentation,
+  Maximize,
+  Minimize
 } from 'lucide-react';
 
 // --- Types ---
@@ -805,6 +807,30 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPresenter, setIsPresenter] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((err) => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -934,6 +960,14 @@ export default function App() {
             </div>
             
             <div className="flex gap-2 md:gap-4">
+              <button
+                onClick={toggleFullscreen}
+                className="w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-indigo-50 hover:text-indigo-600 transition-all active:scale-95"
+                title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                aria-label={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+              >
+                {isFullscreen ? <Minimize className="w-5 h-5 md:w-6 md:h-6" /> : <Maximize className="w-5 h-5 md:w-6 md:h-6" />}
+              </button>
               <a 
                 href="?presenter=true"
                 target="_blank"
