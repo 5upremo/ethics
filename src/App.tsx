@@ -5,31 +5,31 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
   ResponsiveContainer,
   Cell,
   PieChart,
   Pie
 } from 'recharts';
-import { 
-  ChevronRight, 
-  ChevronLeft, 
-  Target, 
-  Users, 
-  Globe, 
-  Zap, 
+import {
+  ChevronRight,
+  ChevronLeft,
+  Target,
+  Users,
+  Globe,
+  Zap,
   BookOpenText,
-  Clock, 
+  Clock,
   Waves,
-  Database, 
-  ShieldAlert, 
-  Smartphone, 
+  Database,
+  ShieldAlert,
+  Smartphone,
   Monitor,
   Shield,
   Eye,
@@ -145,46 +145,46 @@ const slides: Slide[] = [
     type: 'timeline',
     title: 'History of Communication',
     content: [
-      { 
-        year: 'Pre-Language', 
-        text: 'Primitive: Communicated through sounds and body language.', 
+      {
+        year: 'Pre-Language',
+        text: 'Primitive: Communicated through sounds and body language.',
         icon: Users,
         image: 'https://s3.us-east-2.wasabisys.com/media-oaj/wp-content/uploads/2013/09/02154228/gesturesoftheorator.jpg'
-        
+
       },
-      { 
-        year: 'Cave Art', 
-        text: 'Storytelling: Paintings used to tell stories on dust and caves.', 
+      {
+        year: 'Cave Art',
+        text: 'Storytelling: Paintings used to tell stories on dust and caves.',
         icon: BookOpenText,
         image: 'https://i.redd.it/e62u5iswaqva1.png'
       },
-      { 
-        year: 'Smoke Signals', 
-        text: 'Visual: Used smoke signals for long-distance warnings.', 
+      {
+        year: 'Smoke Signals',
+        text: 'Visual: Used smoke signals for long-distance warnings.',
         icon: Waves,
-        image: 'https://scontent-nrt6-1.xx.fbcdn.net/v/t39.30808-6/569555877_26892245100376162_8683846371735889339_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e06c5d&_nc_eui2=AeGT-TJtjpztC1Z5HaW0aM31glIU4RteT-uCUhThG15P6xU1IZpTf383JspRKjvz6anNW6Zr5yLLZ-VUl4ZjYBMB&_nc_ohc=ufhgATsNIoAQ7kNvwEmD8vd&_nc_oc=AdqoQVvkbY_eyr7HBAdN394v8pcVj8FwFZxPc5i5n0ywfidIZs1qkjQyPvpbyIjjGIQ&_nc_zt=23&_nc_ht=scontent-nrt6-1.xx&_nc_gid=_UiBBfP2yGJJaFeRtdOCHA&_nc_ss=7b2a8&oh=00_Af5c756tShNrKV92OYjRtvJKzYM9zttGtHBttasbbHGF0w&oe=6A0203D5'
+        image: "https://fabacademy.org/2018/labs/barcelona/students/javier-alboguijarro/img/finalproject/smokesignals.jpg",
       },
-      { 
-        year: 'Talking Drums', 
-        text: 'Rhythm: Communication across distances using drum patterns.', 
+      {
+        year: 'Talking Drums',
+        text: 'Rhythm: Communication across distances using drum patterns.',
         icon: Drum,
         image: 'https://www.systems2win.com/images/cartoons/taktTimeDrummer.png'
       },
-      { 
-        year: '30,000 BC', 
-        text: 'Symbols: Development of Totem poles and Hieroglyphics.', 
+      {
+        year: '30,000 BC',
+        text: 'Symbols: Development of Totem poles and Hieroglyphics.',
         icon: Globe,
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI1YoP2PykP_hzHADjcx3t1yKpwHmbw1NftB7lITPEuTuPxBvC'
       },
-      { 
-        year: '900 BC', 
-        text: 'Postal: Chinese develop postal system to deliver written messages.', 
+      {
+        year: '900 BC',
+        text: 'Postal: Chinese develop postal system to deliver written messages.',
         icon: Mail,
         image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1xmrMnVM22ffNKNe_mR0GgVAg-U0YxpUu4hjcQHLYFFV-9cHCm_LlRY0UwWAkNG8C3GKXA-bHbsRgtbgETZ2sfFgoGGISDXux3Asge2weNwh1U0Avhq5hHeidCFep_Tic_budCiysaL8/s1600/China+mail.jpg'
       },
-      { 
-        year: '776 BC', 
-        text: 'Pigeons: Homing pigeons carry results for Olympic Games.', 
+      {
+        year: '776 BC',
+        text: 'Pigeons: Homing pigeons carry results for Olympic Games.',
         icon: Eye,
         image: 'https://i.etsystatic.com/8746818/r/il/7b1726/927932618/il_fullxfull.927932618_e2xc.jpg'
       }
@@ -231,51 +231,51 @@ const slides: Slide[] = [
     type: 'features',
     title: 'IT Advantages in Business',
     content: [
-      { 
-        title: 'Globalization', 
-        icon: Globe, 
+      {
+        title: 'Globalization',
+        icon: Globe,
         text: 'Fostering Economic and Social exchange on a worldwide scale.',
         back: 'Businesses can operate 24/7 across time zones and reach global markets.'
       },
-      { 
-        title: 'Competitive Edge', 
-        icon: Zap, 
+      {
+        title: 'Competitive Edge',
+        icon: Zap,
         text: 'Using Enterprise Resource Planning (ERP) for competitive advantages.',
         back: 'Optimized operations and data-driven strategies outperform competitors.'
       },
-      { 
-        title: 'Management Shift', 
-        icon: Layers, 
+      {
+        title: 'Management Shift',
+        icon: Layers,
         text: 'Using technology to change the nature of the management process.',
         back: 'Real-time monitoring and remote leadership redefine organizational roles.'
       },
-      { 
-        title: 'Information Systems', 
-        icon: Database, 
+      {
+        title: 'Information Systems',
+        icon: Database,
         text: 'Using Information Systems (IS) as a core competitive advantage.',
         back: 'Better data organization leads to smarter business intelligence and growth.'
       },
-      { 
-        title: 'Decision Making', 
-        icon: Target, 
+      {
+        title: 'Decision Making',
+        icon: Target,
         text: 'Providing Management Information Systems (MIS) for critical reports.',
         back: 'Accurate reports enable managers to make risky decisions with confidence.'
       },
-      { 
-        title: 'Knowledge IS', 
-        icon: Smartphone, 
+      {
+        title: 'Knowledge IS',
+        icon: Smartphone,
         text: 'Supporting Knowledge Info Systems (KIS) to create and store knowledge.',
         back: 'Capturing employee expertise ensures organizational learning persists.'
       },
-      { 
-        title: 'Corporate Storage', 
-        icon: Database, 
+      {
+        title: 'Corporate Storage',
+        icon: Database,
         text: 'Securely storing corporate data in Excel, Cloud, and Accounting tools.',
         back: 'Cloud storage ensures data security and easy retrieval for audits.'
       },
-      { 
-        title: 'Operational Ease', 
-        icon: Globe, 
+      {
+        title: 'Operational Ease',
+        icon: Globe,
         text: 'Increased operational flexibility for both local and global growth.',
         back: 'Scalable cloud infrastructure lets businesses grow without heavy hardware costs.'
       }
@@ -305,20 +305,20 @@ const slides: Slide[] = [
     type: 'features',
     title: 'Workplace Surveillance',
     content: [
-      { 
-        title: 'Negative Impact', 
-        icon: ShieldAlert, 
-        text: 'Constant monitoring can lead to high levels of stress and anxiety for employees.' 
+      {
+        title: 'Negative Impact',
+        icon: ShieldAlert,
+        text: 'Constant monitoring can lead to high levels of stress and anxiety for employees.'
       },
-      { 
-        title: 'Privacy Loss', 
-        icon: Eye, 
-        text: 'Surveillance can be seen as an invasion of personal privacy in the professional setting.' 
+      {
+        title: 'Privacy Loss',
+        icon: Eye,
+        text: 'Surveillance can be seen as an invasion of personal privacy in the professional setting.'
       },
-      { 
-        title: 'Trust Breach', 
-        icon: Users, 
-        text: 'Erodes the trust between management and staff, leading to lower morale.' 
+      {
+        title: 'Trust Breach',
+        icon: Users,
+        text: 'Erodes the trust between management and staff, leading to lower morale.'
       }
     ],
     presenterNotes: "A specific modern problem is workplace surveillance. When companies constantly monitor employees, it erodes trust, increases stress, and functions as an invasion of privacy, ultimately hurting overall team morale."
@@ -328,17 +328,17 @@ const slides: Slide[] = [
     type: 'activity',
     title: 'Self Reflect Activity',
     content: [
-      { 
-        q: 'How does IT transform business processes?', 
-        a: 'By reducing cycle times (e.g., from 50 days to 10) and increasing operational efficiency through automation.' 
+      {
+        q: 'How does IT transform business processes?',
+        a: 'By reducing cycle times (e.g., from 50 days to 10) and increasing operational efficiency through automation.'
       },
-      { 
-        q: 'What are the main security risks in modern business?', 
-        a: 'Identity theft, phishing, spyware, and unauthorized access to corporate data.' 
+      {
+        q: 'What are the main security risks in modern business?',
+        a: 'Identity theft, phishing, spyware, and unauthorized access to corporate data.'
       },
-      { 
-        q: 'How does technology impact workplace stress?', 
-        a: 'Workplace surveillance and constant monitoring can lead to high levels of stress and anxiety for employees.' 
+      {
+        q: 'How does technology impact workplace stress?',
+        a: 'Workplace surveillance and constant monitoring can lead to high levels of stress and anxiety for employees.'
       }
     ],
     presenterNotes: "Let's take a moment for a self-reflection activity. Please look at these questions and think about how you would answer based on what we've covered today."
@@ -361,23 +361,23 @@ const slides: Slide[] = [
 
 const SlideTitle = ({ slide }: { slide: Slide }) => (
   <div className="relative flex flex-col items-center justify-center h-full text-center p-6 md:p-8 overflow-y-auto bg-slate-900">
-    <motion.div 
+    <motion.div
       initial={{ scale: 1.1, opacity: 0 }}
       animate={{ scale: 1, opacity: 0.4 }}
       transition={{ duration: 2 }}
       className="absolute inset-0 z-0"
     >
-      <img 
+      <img
         src={slide.content.bgImage}
         alt="Background"
         className="w-full h-full object-cover"
         referrerPolicy="no-referrer"
       />
     </motion.div>
-    
+
     <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/60 via-indigo-900/40 to-black/90 z-10"></div>
 
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       className="relative z-20 space-y-10 max-w-5xl"
@@ -390,7 +390,7 @@ const SlideTitle = ({ slide }: { slide: Slide }) => (
           {slide.title}
         </h1>
       </div>
-      
+
       <div className="space-y-4">
         <p className="text-lg md:text-3xl text-indigo-100 font-bold max-w-2xl mx-auto opacity-90 drop-shadow-lg italic">
           {slide.content.subtitle}
@@ -410,10 +410,10 @@ const SlideTitle = ({ slide }: { slide: Slide }) => (
       </div>
 
       <div className="pt-12">
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
-          className="w-16 h-1.5 bg-indigo-500 mx-auto rounded-full shadow-lg shadow-indigo-500/50" 
+          className="w-16 h-1.5 bg-indigo-500 mx-auto rounded-full shadow-lg shadow-indigo-500/50"
         />
       </div>
     </motion.div>
@@ -424,7 +424,7 @@ const SlideGoals = ({ slide }: { slide: Slide }) => (
   <div className="grid grid-cols-1 md:grid-cols-12 h-full bg-slate-50 overflow-y-auto">
     <div className="md:col-span-4 flex flex-col justify-center p-8 md:p-12 bg-indigo-600 text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16 blur-2xl"></div>
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 font-display relative z-10"
@@ -435,7 +435,7 @@ const SlideGoals = ({ slide }: { slide: Slide }) => (
     </div>
     <div className="md:col-span-8 flex flex-col justify-center p-6 md:p-24 gap-4 md:gap-8 bg-white">
       {slide.content.map((item: any, idx: number) => (
-        <motion.div 
+        <motion.div
           key={idx}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -457,7 +457,7 @@ const SlideGoals = ({ slide }: { slide: Slide }) => (
 const SlideIntro = ({ slide }: { slide: Slide }) => (
   <div className="flex flex-col h-full bg-slate-50 overflow-y-auto">
     <div className="flex-1 flex flex-col justify-center px-8 md:px-24 py-12 md:py-0">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs mb-6"
@@ -489,7 +489,7 @@ const SlideTimeline = ({ slide }: { slide: Slide }) => {
         <h2 className="text-3xl md:text-5xl font-black text-slate-900 font-display tracking-tight">{slide.title}</h2>
         <span className="text-[10px] md:text-xs font-bold text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full uppercase tracking-widest">Historical Evolution Gallery</span>
       </div>
-      
+
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 md:grid-cols-2 lg:gap-12 items-start md:items-center">
         {/* Gallery Image Display */}
         <div className="relative aspect-[3/4] md:aspect-[4/5] max-h-[50vh] md:max-h-[70vh] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 flex items-center justify-center">
@@ -515,14 +515,13 @@ const SlideTimeline = ({ slide }: { slide: Slide }) => {
         {/* Timeline Selectors */}
         <div className="space-y-4">
           {slide.content.map((item: any, idx: number) => (
-            <motion.button 
+            <motion.button
               key={idx}
               onClick={() => setActiveIndex(idx)}
-              className={`w-full text-left p-6 rounded-2xl flex items-center gap-6 transition-all border-2 ${
-                activeIndex === idx 
-                ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-200' 
-                : 'bg-slate-50 border-transparent hover:border-slate-200 text-slate-500'
-              }`}
+              className={`w-full text-left p-6 rounded-2xl flex items-center gap-6 transition-all border-2 ${activeIndex === idx
+                  ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-200'
+                  : 'bg-slate-50 border-transparent hover:border-slate-200 text-slate-500'
+                }`}
             >
               <div className={`p-3 rounded-xl ${activeIndex === idx ? 'bg-white/20' : 'bg-slate-200 text-slate-600'}`}>
                 <item.icon className="w-6 h-6" />
@@ -556,17 +555,17 @@ const SlideChart = ({ slide }: { slide: Slide }) => (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={slide.content.data} margin={{ top: 20, right: 30, left: 0, bottom: 50 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-          <XAxis 
-            dataKey="name" 
-            axisLine={false} 
-            tickLine={false} 
+          <XAxis
+            dataKey="name"
+            axisLine={false}
+            tickLine={false}
             tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 700 }}
             dy={20}
             angle={-15}
             textAnchor="end"
           />
           <YAxis hide />
-          <Tooltip 
+          <Tooltip
             cursor={{ fill: '#f8fafc' }}
             content={({ active, payload }) => {
               if (active && payload && payload.length) {
@@ -580,9 +579,9 @@ const SlideChart = ({ slide }: { slide: Slide }) => (
               return null;
             }}
           />
-          <Bar 
-            dataKey="value" 
-            radius={[20, 20, 20, 20]} 
+          <Bar
+            dataKey="value"
+            radius={[20, 20, 20, 20]}
             barSize={60}
           >
             {slide.content.data.map((entry: any, index: number) => (
@@ -599,7 +598,7 @@ const FlipCard = ({ item, delay }: { item: any; delay: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
+    <div
       className="relative w-full h-64 perspective"
       onClick={() => setIsFlipped(!isFlipped)}
     >
@@ -630,7 +629,7 @@ const FlipCard = ({ item, delay }: { item: any; delay: number }) => {
         </div>
 
         {/* Back Side */}
-        <div 
+        <div
           className="absolute inset-0 backface-hidden bg-indigo-600 p-8 md:p-10 rounded-[2.5rem] shadow-2xl flex flex-col justify-center text-white"
           style={{ transform: 'rotateY(180deg)' }}
         >
@@ -664,10 +663,10 @@ const SlideGrid = ({ slide }: { slide: Slide }) => (
         <span className="text-slate-400 text-[10px] font-black uppercase tracking-widest">Core Factors</span>
       </div>
     </div>
-    
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
       {slide.content.map((item: any, idx: number) => (
-        <motion.div 
+        <motion.div
           key={idx}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -686,10 +685,10 @@ const SlideFeatures = ({ slide }: { slide: Slide }) => (
       <h2 className="text-3xl md:text-5xl font-black text-slate-900 font-display tracking-tight mb-4">{slide.title}</h2>
       <div className="w-20 h-2 bg-indigo-600 rounded-full" />
     </div>
-    
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
       {slide.content.map((item: any, idx: number) => (
-        <motion.div 
+        <motion.div
           key={idx}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -722,27 +721,25 @@ const SlideActivity = ({ slide }: { slide: Slide }) => {
         </h2>
 
       </div>
-      
+
       <div className="p-6 md:p-24 flex flex-col justify-center gap-6 md:gap-8 bg-white pb-32 md:pb-24">
         {slide.content.map((item: any, idx: number) => (
-          <motion.div 
+          <motion.div
             key={idx}
             onClick={() => toggleReveal(idx)}
-            className={`cursor-pointer p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] border transition-all duration-300 ${
-              revealed.includes(idx) 
-              ? 'bg-indigo-600 border-indigo-600 text-white shadow-2xl shadow-indigo-200 translate-y-[-4px]' 
-              : 'bg-slate-50 border-slate-100 text-slate-900 hover:border-indigo-200'
-            }`}
+            className={`cursor-pointer p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] border transition-all duration-300 ${revealed.includes(idx)
+                ? 'bg-indigo-600 border-indigo-600 text-white shadow-2xl shadow-indigo-200 translate-y-[-4px]'
+                : 'bg-slate-50 border-slate-100 text-slate-900 hover:border-indigo-200'
+              }`}
           >
             <div className="flex items-center gap-4 mb-4">
-              <span className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center font-black rounded-xl md:rounded-2xl shadow-lg ${
-                revealed.includes(idx) ? 'bg-white text-indigo-600' : 'bg-indigo-600 text-white shadow-indigo-100'
-              }`}>
+              <span className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center font-black rounded-xl md:rounded-2xl shadow-lg ${revealed.includes(idx) ? 'bg-white text-indigo-600' : 'bg-indigo-600 text-white shadow-indigo-100'
+                }`}>
                 {idx + 1}
               </span>
               <h3 className="text-xl md:text-2xl font-black tracking-tight uppercase font-display italic">{item.q}</h3>
             </div>
-            
+
             <AnimatePresence>
               {revealed.includes(idx) && (
                 <motion.div
@@ -775,10 +772,10 @@ const SlideReferences = ({ slide, onReturn }: { slide: Slide; onReturn: () => vo
       <h2 className="text-3xl md:text-4xl font-black text-slate-900 font-display tracking-tight">{slide.title}</h2>
       <div className="flex-1 h-px bg-slate-100" />
     </div>
-    
+
     <div className="space-y-6 md:space-y-8 max-w-4xl">
       {slide.content.map((item: string, idx: number) => (
-        <motion.p 
+        <motion.p
           key={idx}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -789,9 +786,9 @@ const SlideReferences = ({ slide, onReturn }: { slide: Slide; onReturn: () => vo
         </motion.p>
       ))}
     </div>
-    
+
     <div className="mt-12 md:mt-auto pt-16 flex justify-end items-center">
-      <button 
+      <button
         onClick={onReturn}
         className="group flex flex-col md:flex-row items-center gap-4 text-slate-900 font-black text-[10px] md:text-xs uppercase tracking-[0.3em] py-3 md:py-4 px-6 md:px-8 bg-slate-50 rounded-2xl md:rounded-full hover:bg-slate-900 hover:text-white transition-all shadow-sm"
       >
@@ -853,10 +850,10 @@ export default function App() {
         });
       }
     };
-    
+
     // Request sync in case another tab is already open with state
     channelRef.current.postMessage({ type: 'REQUEST_SYNC' });
-    
+
     return () => {
       channelRef.current?.close();
     };
@@ -941,7 +938,7 @@ export default function App() {
 
         {/* Global Progress Bar (from sleek theme) */}
         <div className="absolute top-0 left-0 w-full h-2 bg-slate-200 z-50">
-          <motion.div 
+          <motion.div
             className="h-full bg-indigo-600 rounded-r-full shadow-lg shadow-indigo-200"
             initial={{ width: 0 }}
             animate={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
@@ -958,7 +955,7 @@ export default function App() {
                 SLIDE <span className="text-indigo-600">{currentSlide + 1 < 10 ? `0${currentSlide + 1}` : currentSlide + 1}</span> / {slides.length}
               </div>
             </div>
-            
+
             <div className="flex gap-2 md:gap-4">
               <button
                 onClick={toggleFullscreen}
@@ -968,7 +965,7 @@ export default function App() {
               >
                 {isFullscreen ? <Minimize className="w-5 h-5 md:w-6 md:h-6" /> : <Maximize className="w-5 h-5 md:w-6 md:h-6" />}
               </button>
-              <a 
+              <a
                 href="?presenter=true"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -978,7 +975,7 @@ export default function App() {
               >
                 <Presentation className="w-5 h-5 md:w-6 md:h-6" />
               </a>
-              <button 
+              <button
                 onClick={() => paginate(-1)}
                 disabled={currentSlide === 0}
                 className="w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-slate-200 flex items-center justify-center text-slate-800 disabled:opacity-20 hover:bg-slate-50 transition-all active:scale-95"
@@ -986,8 +983,8 @@ export default function App() {
               >
                 <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => paginate(1)}
                 disabled={currentSlide === slides.length - 1}
                 className="w-12 h-12 md:w-14 md:h-14 bg-slate-900 shadow-2xl shadow-slate-300 rounded-full flex items-center justify-center text-white disabled:opacity-20 hover:bg-indigo-600 transition-all active:scale-95"
@@ -1021,7 +1018,7 @@ export default function App() {
               SLIDE <span className="text-indigo-600">{currentSlide + 1}</span> / {slides.length}
             </div>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto p-8 bg-white">
             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Speaker Notes</h3>
             <div className="prose prose-slate max-w-none">
@@ -1029,7 +1026,7 @@ export default function App() {
                 {slideData.presenterNotes || "No notes for this slide."}
               </p>
             </div>
-            
+
             {/* Show next slide preview or title as hint */}
             {currentSlide < slides.length - 1 && (
               <div className="mt-12 p-5 bg-slate-50 border border-slate-100 rounded-2xl">
@@ -1040,14 +1037,14 @@ export default function App() {
           </div>
 
           <div className="p-6 border-t border-slate-100 bg-white flex gap-4">
-            <button 
+            <button
               onClick={() => paginate(-1)}
               disabled={currentSlide === 0}
               className="flex-1 py-4 flex items-center justify-center gap-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-black uppercase tracking-widest text-slate-800 disabled:opacity-30 hover:bg-slate-100 transition-colors"
             >
               <ChevronLeft className="w-4 h-4" /> Prev
             </button>
-            <button 
+            <button
               onClick={() => paginate(1)}
               disabled={currentSlide === slides.length - 1}
               className="flex-1 py-4 flex items-center justify-center gap-2 bg-indigo-600 rounded-xl text-xs font-black uppercase tracking-widest text-white disabled:opacity-30 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
