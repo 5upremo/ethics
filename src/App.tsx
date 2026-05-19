@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart, 
@@ -40,7 +40,8 @@ import {
   History,
   Cloud,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Presentation
 } from 'lucide-react';
 
 // --- Types ---
@@ -50,6 +51,7 @@ interface Slide {
   type: 'title' | 'goals' | 'intro' | 'activity' | 'definitions' | 'timeline' | 'features' | 'grid' | 'references' | 'chart' | 'hotspot';
   title: string;
   content: any;
+  presenterNotes?: string;
 }
 
 // --- Data ---
@@ -65,7 +67,8 @@ const slides: Slide[] = [
       author: 'Author: Amzel E. Meñoza, LPT.',
       presentedBy: 'Presented by: BSIT1B - GROUP 4',
       bgImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
-    }
+    },
+    presenterNotes: "Welcome everyone. Today we'll be discussing the profound impact of technology on communication and modern business. We'll explore both the positive transformations and the notable drawbacks we must navigate."
   },
   {
     id: 'it-impact-chart',
@@ -80,7 +83,8 @@ const slides: Slide[] = [
         { name: 'Insurance Proc (1 Day)', value: 1, fill: '#a855f7' }
       ],
       description: 'IT enables a reduction of cycle time from 50 days down to 10. Insurance processing drops from one month to just one day.'
-    }
+    },
+    presenterNotes: "Here we see a stark visual of how Information Technology speeds up business. Notice the massive drop in cycle times from 50 days to just 10, and insurance processing shrinking from a whole month down to a single day."
   },
   {
     id: 'objectives',
@@ -103,7 +107,8 @@ const slides: Slide[] = [
         icon: Eye,
         text: 'Identify the negative effects of workplace surveillance.'
       }
-    ]
+    ],
+    presenterNotes: "Our objectives for this session are four-fold. We'll look at general IT uses, cover the advantages, tackle the critical disadvantages, and finally, dive into the specific negative effects of workplace surveillance."
   },
   {
     id: 'intro',
@@ -116,7 +121,8 @@ const slides: Slide[] = [
         { label: 'Consumers', value: 'Purchasers' },
         { label: 'Nexus', value: 'Market' }
       ]
-    }
+    },
+    presenterNotes: "Before diving into technology, let's understand the core of business: Interdependence. Producers need customers, and customers need products. The market acts as the nexus connecting them both."
   },
   {
     id: 'abstraction',
@@ -129,7 +135,8 @@ const slides: Slide[] = [
         { label: 'Drivers', value: 'Mobile' },
         { label: 'Reach', value: 'Limitless' }
       ]
-    }
+    },
+    presenterNotes: "In mostly the last decade alone, everything shifted. The digital transformation has disrupted long-established ways of working. Mobile and Internet technologies are the primary drivers here."
   },
   {
     id: 'history',
@@ -179,7 +186,8 @@ const slides: Slide[] = [
         icon: Eye,
         image: 'https://i.etsystatic.com/8746818/r/il/7b1726/927932618/il_fullxfull.927932618_e2xc.jpg'
       }
-    ]
+    ],
+    presenterNotes: "Let's take a quick look back. Communication started primitively with sounds and body language, moved to cave art, then long distance via smoke signals and talking drums. Formal writing systems like hieroglyphics followed around 30,000 BC, leading to the postal systems in 900 BC and even pigeon messaging."
   },
   {
     id: 'comm-advantages',
@@ -195,7 +203,8 @@ const slides: Slide[] = [
       { icon: Globe, title: 'E-Shopping', text: 'Conveniently buy items through the web (online shopping).', back: 'Shop from home with global access to products and doorway delivery.' },
       { icon: History, title: 'Updates', text: 'Stay updated through social happenings in real-time.', back: 'Breaking news and social trends reach you the moment they happen.' },
       { icon: Users, title: 'Expression', text: 'State opinions through blogs, twitter, and social platforms.', back: 'Digital platforms give everyone a voice to share ideas and perspectives.' }
-    ]
+    ],
+    presenterNotes: "Here are the key advantages of IT in communication. From giving us global contact capabilities to radically improving education and our standard of living. It also gives ordinary individuals a massive platform for self-expression."
   },
   {
     id: 'comm-disadvantages',
@@ -212,7 +221,8 @@ const slides: Slide[] = [
       { icon: ShieldAlert, title: 'Cybercrime', text: 'Significant increase in hacking and online scams.', back: 'Fraudsters use sophisticated tech to steal money and sensitive data.' },
       { icon: AlertTriangle, title: 'Reputation', text: 'Destruction of one’s reputation and relationships.', back: 'Misunderstandings and cyberbullying can cause lasting social harm.' },
       { icon: Shield, title: 'Viruses', text: 'Rapid spreading of malicious software and viruses.', back: 'Malware can destroy data, hardware, and compromise entire networks.' }
-    ]
+    ],
+    presenterNotes: "But there's a flip side. Tech addiction is a real issue. Wasted time, potential privacy violations, and cybercrime are massive threats. We also have to be mindful of physical consequences like poor eyesight from excessive screen time."
   },
   {
     id: 'business-advantages',
@@ -267,7 +277,8 @@ const slides: Slide[] = [
         text: 'Increased operational flexibility for both local and global growth.',
         back: 'Scalable cloud infrastructure lets businesses grow without heavy hardware costs.'
       }
-    ]
+    ],
+    presenterNotes: "For businesses, IT brings undeniable advantages. It promotes globalization, secures a competitive edge, and empowers data-driven decision making. Corporate data is more secure and accessible, allowing operations to scale faster."
   },
   {
     id: 'business-disadvantages',
@@ -284,7 +295,8 @@ const slides: Slide[] = [
       { icon: Globe, title: 'Weaponry', text: 'Technology being used in world destruction weapons and war.', back: 'Dual-use tech can be repurposed for harmful military applications.' },
       { icon: AlertTriangle, title: 'Distraction', text: 'Humans are easily distracted by social media and games.', back: 'The availability of non-work content often reduces employee output.' },
       { icon: Eye, title: 'Health Concerns', text: 'Vision problems, obesity, insomnia, and loss of sleep.', back: 'Sedentary work and screen blue light affect physical and mental health.' }
-    ]
+    ],
+    presenterNotes: "Conversely, businesses face massive expenses for implementation and maintenance. Security risks and privacy issues are constant threats. There's also the societal cost: as computers do more, human unemployment in certain sectors rises."
   },
   {
     id: 'surveillance',
@@ -306,7 +318,8 @@ const slides: Slide[] = [
         icon: Users, 
         text: 'Erodes the trust between management and staff, leading to lower morale.' 
       }
-    ]
+    ],
+    presenterNotes: "A specific modern problem is workplace surveillance. When companies constantly monitor employees, it erodes trust, increases stress, and functions as an invasion of privacy, ultimately hurting overall team morale."
   },
   {
     id: 'activity',
@@ -325,7 +338,8 @@ const slides: Slide[] = [
         q: 'How does technology impact workplace stress?', 
         a: 'Workplace surveillance and constant monitoring can lead to high levels of stress and anxiety for employees.' 
       }
-    ]
+    ],
+    presenterNotes: "Let's take a moment for a self-reflection activity. Please look at these questions and think about how you would answer based on what we've covered today."
   },
   {
     id: 'references',
@@ -336,7 +350,8 @@ const slides: Slide[] = [
       'Gunasekaran, A., & Nath, B. (1997). The role of information technology in business process reengineering.',
       'Nikoloski, Krume (2014). Role of IT in Business.',
       'International Journal Of Science And Research (IJSR). (n.d.). The Role of IT in the Business Sector.'
-    ]
+    ],
+    presenterNotes: "Here are the references used in today's module. Thank you all for listening, this concludes our presentation."
   }
 ];
 
@@ -789,14 +804,49 @@ const SlideReferences = ({ slide, onReturn }: { slide: Slide; onReturn: () => vo
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isPresenter, setIsPresenter] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('presenter') === 'true') {
+      setIsPresenter(true);
+    }
+  }, []);
+
+  const channelRef = useRef<BroadcastChannel | null>(null);
+
+  useEffect(() => {
+    channelRef.current = new BroadcastChannel('presentation_sync');
+    channelRef.current.onmessage = (event) => {
+      if (event.data.type === 'SYNC_SLIDE') {
+        setCurrentSlide(event.data.slide);
+      } else if (event.data.type === 'REQUEST_SYNC') {
+        setCurrentSlide(prev => {
+          channelRef.current?.postMessage({ type: 'SYNC_SLIDE', slide: prev });
+          return prev;
+        });
+      }
+    };
+    
+    // Request sync in case another tab is already open with state
+    channelRef.current.postMessage({ type: 'REQUEST_SYNC' });
+    
+    return () => {
+      channelRef.current?.close();
+    };
+  }, []);
 
   const paginate = useCallback((newDirection: number) => {
-    const nextIdx = currentSlide + newDirection;
-    if (nextIdx >= 0 && nextIdx < slides.length) {
-      setDirection(newDirection);
-      setCurrentSlide(nextIdx);
-    }
-  }, [currentSlide]);
+    setCurrentSlide(prev => {
+      const nextIdx = prev + newDirection;
+      if (nextIdx >= 0 && nextIdx < slides.length) {
+        setDirection(newDirection);
+        channelRef.current?.postMessage({ type: 'SYNC_SLIDE', slide: nextIdx });
+        return nextIdx;
+      }
+      return prev;
+    });
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -829,34 +879,39 @@ export default function App() {
     }),
   };
 
+  const renderSlide = () => (
+    <AnimatePresence initial={false} custom={direction} mode="wait">
+      <motion.div
+        key={currentSlide}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{
+          x: { type: "spring", stiffness: 200, damping: 25 },
+          opacity: { duration: 0.3 },
+        }}
+        className="absolute inset-0"
+      >
+        {slideData.type === 'title' && <SlideTitle slide={slideData} />}
+        {slideData.type === 'goals' && <SlideGoals slide={slideData} />}
+        {slideData.type === 'intro' && <SlideIntro slide={slideData} />}
+        {slideData.type === 'timeline' && <SlideTimeline slide={slideData} />}
+        {slideData.type === 'chart' && <SlideChart slide={slideData} />}
+        {slideData.type === 'grid' && <SlideGrid slide={slideData} />}
+        {slideData.type === 'features' && <SlideFeatures slide={slideData} />}
+        {slideData.type === 'activity' && <SlideActivity slide={slideData} />}
+        {slideData.type === 'references' && <SlideReferences slide={slideData} onReturn={() => setCurrentSlide(0)} />}
+      </motion.div>
+    </AnimatePresence>
+  );
+
   return (
-    <div className="fixed inset-0 bg-slate-50 font-sans selection:bg-indigo-100 selection:text-indigo-900">
-      <main className="relative w-full h-full overflow-hidden">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
-          <motion.div
-            key={currentSlide}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 200, damping: 25 },
-              opacity: { duration: 0.3 },
-            }}
-            className="absolute inset-0"
-          >
-            {slideData.type === 'title' && <SlideTitle slide={slideData} />}
-            {slideData.type === 'goals' && <SlideGoals slide={slideData} />}
-            {slideData.type === 'intro' && <SlideIntro slide={slideData} />}
-            {slideData.type === 'timeline' && <SlideTimeline slide={slideData} />}
-            {slideData.type === 'chart' && <SlideChart slide={slideData} />}
-            {slideData.type === 'grid' && <SlideGrid slide={slideData} />}
-            {slideData.type === 'features' && <SlideFeatures slide={slideData} />}
-            {slideData.type === 'activity' && <SlideActivity slide={slideData} />}
-            {slideData.type === 'references' && <SlideReferences slide={slideData} onReturn={() => setCurrentSlide(0)} />}
-          </motion.div>
-        </AnimatePresence>
+    <div className="fixed inset-0 bg-slate-50 font-sans selection:bg-indigo-100 selection:text-indigo-900 flex">
+      {/* Main Slide Area */}
+      <main className={`relative w-full h-full overflow-hidden ${isPresenter ? 'flex-1 border-r border-slate-200 hidden md:block' : ''}`}>
+        {renderSlide()}
 
         {/* Global Progress Bar (from sleek theme) */}
         <div className="absolute top-0 left-0 w-full h-2 bg-slate-200 z-50">
@@ -869,40 +924,105 @@ export default function App() {
         </div>
 
         {/* Footer Navigation Controls (from sleek theme) */}
-        <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 flex items-center gap-4 md:gap-6 z-50">
-          <div className="hidden sm:flex flex-col items-end gap-1 px-4 py-2 border-r border-slate-200">
-            <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Navigation</div>
-            <div className="text-xs font-black text-slate-900">
-              SLIDE <span className="text-indigo-600">{currentSlide + 1 < 10 ? `0${currentSlide + 1}` : currentSlide + 1}</span> / {slides.length}
+        {!isPresenter && (
+          <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 flex items-center gap-4 md:gap-6 z-50">
+            <div className="hidden sm:flex flex-col items-end gap-1 px-4 py-2 border-r border-slate-200">
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Navigation</div>
+              <div className="text-xs font-black text-slate-900">
+                SLIDE <span className="text-indigo-600">{currentSlide + 1 < 10 ? `0${currentSlide + 1}` : currentSlide + 1}</span> / {slides.length}
+              </div>
+            </div>
+            
+            <div className="flex gap-2 md:gap-4">
+              <a 
+                href="?presenter=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-slate-200 flex items-center justify-center text-slate-800 hover:bg-indigo-50 hover:text-indigo-600 transition-all active:scale-95"
+                title="Open Presenter View"
+                aria-label="Open Presenter View"
+              >
+                <Presentation className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              <button 
+                onClick={() => paginate(-1)}
+                disabled={currentSlide === 0}
+                className="w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-slate-200 flex items-center justify-center text-slate-800 disabled:opacity-20 hover:bg-slate-50 transition-all active:scale-95"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
+              
+              <button 
+                onClick={() => paginate(1)}
+                disabled={currentSlide === slides.length - 1}
+                className="w-12 h-12 md:w-14 md:h-14 bg-slate-900 shadow-2xl shadow-slate-300 rounded-full flex items-center justify-center text-white disabled:opacity-20 hover:bg-indigo-600 transition-all active:scale-95"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Key Hints Overlay */}
+        {!isPresenter && (
+          <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 text-[7px] md:text-[9px] font-black text-slate-400 uppercase tracking-[0.4em] pointer-events-none opacity-50">
+            Space / Arrows To Scroll
+          </div>
+        )}
+      </main>
+
+      {/* Presenter Sidebar */}
+      {isPresenter && (
+        <aside className="w-full md:w-[400px] lg:w-[500px] h-full bg-white flex flex-col shadow-2xl z-50">
+          <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-indigo-100 text-indigo-600 rounded-lg">
+                <Presentation className="w-5 h-5" />
+              </div>
+              <h2 className="text-sm font-black uppercase tracking-widest text-slate-900">Presenter View</h2>
+            </div>
+            <div className="text-xs font-black text-slate-900 bg-white px-4 py-2 border border-slate-200 shadow-sm rounded-full">
+              SLIDE <span className="text-indigo-600">{currentSlide + 1}</span> / {slides.length}
             </div>
           </div>
           
-          <div className="flex gap-2 md:gap-4">
+          <div className="flex-1 overflow-y-auto p-8 bg-white">
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Speaker Notes</h3>
+            <div className="prose prose-slate max-w-none">
+              <p className="text-lg md:text-xl font-medium leading-relaxed text-slate-700">
+                {slideData.presenterNotes || "No notes for this slide."}
+              </p>
+            </div>
+            
+            {/* Show next slide preview or title as hint */}
+            {currentSlide < slides.length - 1 && (
+              <div className="mt-12 p-5 bg-slate-50 border border-slate-100 rounded-2xl">
+                <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Up Next</div>
+                <div className="text-sm font-bold text-slate-900">{slides[currentSlide + 1].title}</div>
+              </div>
+            )}
+          </div>
+
+          <div className="p-6 border-t border-slate-100 bg-white flex gap-4">
             <button 
               onClick={() => paginate(-1)}
               disabled={currentSlide === 0}
-              className="w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-slate-200 flex items-center justify-center text-slate-800 disabled:opacity-20 hover:bg-slate-50 transition-all active:scale-95"
-              aria-label="Previous slide"
+              className="flex-1 py-4 flex items-center justify-center gap-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-black uppercase tracking-widest text-slate-800 disabled:opacity-30 hover:bg-slate-100 transition-colors"
             >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+              <ChevronLeft className="w-4 h-4" /> Prev
             </button>
-            
             <button 
               onClick={() => paginate(1)}
               disabled={currentSlide === slides.length - 1}
-              className="w-12 h-12 md:w-14 md:h-14 bg-slate-900 shadow-2xl shadow-slate-300 rounded-full flex items-center justify-center text-white disabled:opacity-20 hover:bg-indigo-600 transition-all active:scale-95"
-              aria-label="Next slide"
+              className="flex-1 py-4 flex items-center justify-center gap-2 bg-indigo-600 rounded-xl text-xs font-black uppercase tracking-widest text-white disabled:opacity-30 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
             >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+              Next <ChevronRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
-
-        {/* Key Hints Overlay */}
-        <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 text-[7px] md:text-[9px] font-black text-slate-400 uppercase tracking-[0.4em] pointer-events-none opacity-50">
-          Space / Arrows To Scroll
-        </div>
-      </main>
+        </aside>
+      )}
     </div>
   );
 }
