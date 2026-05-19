@@ -194,7 +194,7 @@ const slides: Slide[] = [
   {
     id: 'comm-advantages',
     type: 'grid',
-    title: 'Advantages: Communication',
+    title: 'Advantages of Technology in Communication',
     content: [
       { icon: Globe, title: 'Global Contact', text: 'Helps us to communicate easily with others worldwide.', back: 'Connect instantly via email, social media, and video calls without borders.' },
       { icon: Zap, title: 'Better Living', text: 'Aims for a higher standard of living through connectivity.', back: 'Enhances lifestyle by providing convenient access to services and information.' },
@@ -211,7 +211,7 @@ const slides: Slide[] = [
   {
     id: 'comm-disadvantages',
     type: 'grid',
-    title: 'Disadvantages: Communication',
+    title: 'Disadvantages of Technology in Communication',
     content: [
       { icon: Clock, title: 'Addiction', text: 'Users becoming compulsively addicted to computers.', back: 'Excessive use can lead to social isolation and neglected responsibilities.' },
       { icon: ShieldAlert, title: 'Wasted Money', text: 'Wasting of money to buy unnecessary things.', back: 'Impulsive online shopping and micro-transactions can drain finances.' },
@@ -229,7 +229,7 @@ const slides: Slide[] = [
   {
     id: 'business-advantages',
     type: 'features',
-    title: 'IT Advantages in Business',
+    title: 'Advantages of Technology in Business',
     content: [
       {
         title: 'Globalization',
@@ -285,7 +285,7 @@ const slides: Slide[] = [
   {
     id: 'business-disadvantages',
     type: 'grid',
-    title: 'IT Disadvantages in Business',
+    title: 'Disadvantages of Technology in Business',
     content: [
       { icon: ShieldAlert, title: 'Expense', text: 'High costs for Implementation, Maintenance, and Training.', back: 'Upgrading systems requires massive capital and constant staff training.' },
       { icon: Eye, title: 'Privacy Issues', text: 'Organizations struggling with issues regarding stored privacy.', back: 'Storing customer data brings heavy legal and ethical responsibilities.' },
