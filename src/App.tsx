@@ -43,7 +43,9 @@ import {
   ArrowRight,
   Presentation,
   Maximize,
-  Minimize
+  Minimize,
+  Info,
+  X
 } from 'lucide-react';
 
 // --- Types ---
@@ -482,11 +484,20 @@ const SlideIntro = ({ slide }: { slide: Slide }) => (
 
 const SlideTimeline = ({ slide }: { slide: Slide }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <div className="h-full flex flex-col p-6 md:p-16 bg-white overflow-y-auto pb-32 md:pb-16">
+    <div className="h-full flex flex-col p-6 md:p-16 bg-white overflow-y-auto pb-32 md:pb-16 relative">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 font-display tracking-tight">{slide.title}</h2>
+        <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 font-display tracking-tight">{slide.title}</h2>
+          <button 
+            onClick={() => setIsDialogOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-full transition-colors text-sm font-bold shadow-sm"
+          >
+            <Info className="w-4 h-4" /> What is Technology?
+          </button>
+        </div>
         <span className="text-[10px] md:text-xs font-bold text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full uppercase tracking-widest">Historical Evolution Gallery</span>
       </div>
 
@@ -538,6 +549,44 @@ const SlideTimeline = ({ slide }: { slide: Slide }) => {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {isDialogOpen && (
+          <div className="absolute inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl max-w-lg w-full relative"
+            >
+              <button 
+                onClick={() => setIsDialogOpen(false)}
+                className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors"
+                aria-label="Close dialog"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                <Info className="w-6 h-6" />
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-black text-slate-900 font-display tracking-tight mb-4">
+                What is Technology?
+              </h3>
+              
+              <div className="space-y-4 text-slate-600 font-medium leading-relaxed">
+                <p>
+                  The practical application of scientific knowledge, particularly in industry.
+                </p>
+                <p>
+                  Scientific information was used to construct machinery and technologies.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
